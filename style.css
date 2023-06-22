@@ -88,3 +88,8 @@ footer{
     background-color: #021325;
     border-top: 50px solid #031A32;
 }
+
+form{
+    max-width: 460px;
+    margin: 20px;
+}
