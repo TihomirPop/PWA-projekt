@@ -1,0 +1,16 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    background-color: #02122F;
+}
+header h1{
+    display: none;
+}
+header img{
+    display: block;
+    margin: 0 auto;
+    height: 80px;
+}
