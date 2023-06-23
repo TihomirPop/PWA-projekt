@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,14 +14,14 @@
         <h1>debate</h1>
         <img src="../assets/logo.webp" alt="debate">
         <nav>
-            <a href="index.html">HOME</a>
+            <a href="index.php">HOME</a>
             <a href="">MUNDO</a>
             <a href="">DEPORTE</a>
             <a href="">ADMINISTRACIJA</a>
-            <a href="unos.html">UNOS</a>
+            <a href="unos.php">UNOS</a>
         </nav>
     </header>
-    <form action="../php/skripta.php" method="post">
+    <form enctype="multipart/form-data" action="skripta.php" method="post">
         <label for="naslov">Naslov vijesti:</label><br>
         <input type="text" id="naslov" name="naslov" class="form-control" required><br>
         <label for="sazetak">Kratki sadržaj vijesti (do 50 znakova):</label><br>
@@ -33,8 +34,8 @@
             <option value="DEPORTE" class="form-control">Deporte</option>
         </select><br>
         <label for="slika">Slika:</label><br>
-        <input type="file" name="slika" id="slika" accept="image/*" class="form-control" required/><br>
-        <input type="checkbox" name="prikazi" id="prikazi">
+        <input type="file" name="slika" id="slika" accept="image/*" class="form-control" required /><br>
+        <input type="checkbox" name="prikazi" id="prikazi" checked>
         <label for="prikazi"> Prikaži na stranici</label><br><br>
 
         <button type="reset" value="Poništi" class="btn btn-secondary">Poništi</button>
@@ -44,4 +45,5 @@
         Tihomir Popović - tpopovic@tvz.hr - 2023.
     </footer>
 </body>
+
 </html>

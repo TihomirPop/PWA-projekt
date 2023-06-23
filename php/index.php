@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,11 +14,11 @@
         <h1>debate</h1>
         <img src="../assets/logo.webp" alt="debate">
         <nav>
-            <a href="index.html">HOME</a>
+            <a href="index.php">HOME</a>
             <a href="">MUNDO</a>
             <a href="">DEPORTE</a>
             <a href="">ADMINISTRACIJA</a>
-            <a href="unos.html">UNOS</a>
+            <a href="unos.php">UNOS</a>
         </nav>
     </header>
     <section>
@@ -53,7 +54,7 @@
         </div>
     </section>
     <hr>
-    <section >
+    <section>
         <h2>
             <img src="../assets/bullet.webp" alt="">
             <span>DEPORTE</span>
@@ -90,4 +91,5 @@
         Tihomir Popović - tpopovic@tvz.hr - 2023.
     </footer>
 </body>
+
 </html>
