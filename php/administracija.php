@@ -10,17 +10,7 @@
 </head>
 
 <body>
-    <header>
-        <h1>debate</h1>
-        <img src="../assets/logo.webp" alt="debate">
-        <nav>
-            <a href="index.php">HOME</a>
-            <a href="kategorija.php?id=svijet">SVIJET</a>
-            <a href="kategorija.php?id=sport">SPORT</a>
-            <a href="administracija.php">ADMINISTRACIJA</a>
-            <a href="unos.php">UNOS</a>
-        </nav>
-    </header>
+    <?php include '../html/header.html' ?>
 
     <?php
     include 'connect.php';
