@@ -138,3 +138,7 @@ main .content{
     margin: 0 auto;
     margin-bottom: 40px;
 }
+
+.administracijaForm hr{
+    max-width: 100%;
+}
