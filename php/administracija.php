@@ -64,8 +64,8 @@
                 <label for="category">Kategorija vijesti:</label>
                 <div class="form-field">
                     <select name="category" id="category" class="form-control" value="' . $row['kategorija'] . '">
-                        <option value="SVIJET" class="form-control">Svijet</option>
-                        <option value="SPORT" class="form-control">Sport</option>
+                        <option value="SVIJET" class="form-control"' . (($row['kategorija'] == 'SVIJET') ? 'selected' : '') . '>Svijet</option>
+                        <option value="SPORT" class="form-control"' . (($row['kategorija'] == 'SPORT') ? 'selected' : '') . '>Sport</option>
                     </select>
                 </div>
             </div>
@@ -96,7 +96,6 @@
         $query = "DELETE FROM vijesti WHERE id=$id ";
         $result = mysqli_query($dbc, $query);
     } else if (isset($_POST['update'])) {
-        $picture = $_FILES['pphoto']['name'];
         $title = $_POST['title'];
         $about = $_POST['about'];
         $content = $_POST['content'];
@@ -108,9 +107,16 @@
         else
             $prikazi = 0;
 
-        move_uploaded_file($_FILES["pphoto"]["tmp_name"], '../images/' . $picture);
-        $query = "UPDATE vijesti SET naslov='$title', sazetak='$about', tekst='$content', slika='$picture', kategorija='$category', prikazi='$prikazi' WHERE id=$id ";
-        $result = mysqli_query($dbc, $query);
+
+        if (strlen($_FILES['pphoto']['name']) > 0) {
+            $picture = $_FILES['pphoto']['name'];
+            move_uploaded_file($_FILES["pphoto"]["tmp_name"], '../images/' . $picture);
+            $query = "UPDATE vijesti SET naslov='$title', sazetak='$about', tekst='$content', slika='$picture', kategorija='$category', prikazi='$prikazi' WHERE id=$id ";
+            $result = mysqli_query($dbc, $query);
+        } else {
+            $query = "UPDATE vijesti SET naslov='$title', sazetak='$about', tekst='$content', kategorija='$category', prikazi='$prikazi' WHERE id=$id ";
+            $result = mysqli_query($dbc, $query);
+        }
     }
 
     ?>
