@@ -4,15 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
     <title>debate</title>
 </head>
 
 <body>
     <header>
         <h1>debate</h1>
-        <img src="assets/logo.webp" alt="debate">
+        <img src="../assets/logo.webp" alt="debate">
         <nav>
             <a href="index.html">HOME</a>
             <a href="">MUNDO</a>
