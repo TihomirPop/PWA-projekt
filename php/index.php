@@ -15,78 +15,69 @@
         <img src="../assets/logo.webp" alt="debate">
         <nav>
             <a href="index.php">HOME</a>
-            <a href="">MUNDO</a>
-            <a href="">DEPORTE</a>
-            <a href="">ADMINISTRACIJA</a>
+            <a href="kategorija.php?id=svijet">SVIJET</a>
+            <a href="kategorija.php?id=sport">SPORT</a>
+            <a href="administracija.php">ADMINISTRACIJA</a>
             <a href="unos.php">UNOS</a>
         </nav>
     </header>
+
+    <?php
+    include 'connect.php';
+    define('IMGPATH', '../images/');
+    ?>
+
     <section>
         <h2>
             <img src="../assets/bullet.webp" alt="">
-            <span>MUNDO</span>
+            <span>SVIJET</span>
         </h2>
         <div class="articleWrapper">
-            <article>
-                <img src="../images/1.webp" alt="">
-                <p class="category">ESTADOS UNIDOS</p>
-                <h3>Tornados dejan danos en cases del sur de Estados Unidos</h3>
-                <p class="author">POR ANDRES RODRIGUEZ - HACE 31 MINUTOS</p>
-            </article>
-            <article>
-                <img src="../images/1.webp" alt="">
-                <p class="category">ESTADOS UNIDOS</p>
-                <h3>Tornados dejan danos en cases del sur de Estados Unidos</h3>
-                <p class="author">POR ANDRES RODRIGUEZ - HACE 31 MINUTOS</p>
-            </article>
-            <article>
-                <img src="../images/1.webp" alt="">
-                <p class="category">ESTADOS UNIDOS</p>
-                <h3>Tornados dejan danos en cases del sur de Estados Unidos</h3>
-                <p class="author">POR ANDRES RODRIGUEZ - HACE 31 MINUTOS</p>
-            </article>
-            <article>
-                <img src="../images/1.webp" alt="">
-                <p class="category">ESTADOS UNIDOS</p>
-                <h3>Tornados dejan danos en cases del sur de Estados Unidos</h3>
-                <p class="author">POR ANDRES RODRIGUEZ - HACE 31 MINUTOS</p>
-            </article>
+            <?php
+            $query = "SELECT * FROM vijesti WHERE prikazi = 1 AND kategorija = 'SVIJET' LIMIT 4";
+            $result = mysqli_query($dbc, $query);
+            while ($row = mysqli_fetch_array($result)) {
+                echo "
+                <article>
+                    <img src='" . IMGPATH . $row['slika'] . "' alt='" . $row['slika'] . "'>
+                    <p class='about'>" . $row['sazetak'] . "</p>
+                    <h3>
+                        <a href='clanak.php?id=" . $row['id'] . "'>" . $row['naslov'] . "</a>
+                    </h3>
+                    <p class='author'>" . $row['datum'] . "</p>
+                </article>
+                ";
+            }
+            ?>
         </div>
     </section>
     <hr>
     <section>
         <h2>
             <img src="../assets/bullet.webp" alt="">
-            <span>DEPORTE</span>
+            <span>SPORT</span>
         </h2>
         <div class="articleWrapper">
-            <article>
-                <img src="../images/1.webp" alt="">
-                <p class="category">ESTADOS UNIDOS</p>
-                <h3>Tornados dejan danos en cases del sur de Estados Unidos</h3>
-                <p class="author">POR ANDRES RODRIGUEZ - HACE 31 MINUTOS</p>
-            </article>
-            <article>
-                <img src="../images/1.webp" alt="">
-                <p class="category">ESTADOS UNIDOS</p>
-                <h3>Tornados dejan danos en cases del sur de Estados Unidos</h3>
-                <p class="author">POR ANDRES RODRIGUEZ - HACE 31 MINUTOS</p>
-            </article>
-            <article>
-                <img src="../images/1.webp" alt="">
-                <p class="category">ESTADOS UNIDOS</p>
-                <h3>Tornados dejan danos en cases del sur de Estados Unidos</h3>
-                <p class="author">POR ANDRES RODRIGUEZ - HACE 31 MINUTOS</p>
-            </article>
-            <article>
-                <img src="../images/1.webp" alt="">
-                <p class="category">ESTADOS UNIDOS</p>
-                <h3>Tornados dejan danos en cases del sur de Estados Unidos</h3>
-                <p class="author">POR ANDRES RODRIGUEZ - HACE 31 MINUTOS</p>
-            </article>
+            <?php
+            $query = "SELECT * FROM vijesti WHERE prikazi = 1 AND kategorija = 'SPORT' LIMIT 4";
+            $result = mysqli_query($dbc, $query);
+            while ($row = mysqli_fetch_array($result)) {
+                echo "
+                <article>
+                    <img src='" . IMGPATH . $row['slika'] . "' alt='" . $row['slika'] . "'>
+                    <p class='about'>" . $row['sazetak'] . "</p>
+                    <h3>
+                        <a href='clanak.php?id=" . $row['id'] . "'>" . $row['naslov'] . "</a>
+                    </h3>
+                    <p class='author'>" . $row['datum'] . "</p>
+                </article>
+                ";
+            }
+            ?>
         </div>
     </section>
     <hr>
+
     <footer>
         Tihomir Popović - tpopovic@tvz.hr - 2023.
     </footer>

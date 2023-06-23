@@ -15,12 +15,13 @@
         <img src="../assets/logo.webp" alt="debate">
         <nav>
             <a href="index.php">HOME</a>
-            <a href="">MUNDO</a>
-            <a href="">DEPORTE</a>
-            <a href="">ADMINISTRACIJA</a>
+            <a href="kategorija.php?id=svijet">SVIJET</a>
+            <a href="kategorija.php?id=sport">SPORT</a>
+            <a href="administracija.php">ADMINISTRACIJA</a>
             <a href="unos.php">UNOS</a>
         </nav>
     </header>
+
     <main>
 
         <?php
@@ -62,7 +63,9 @@
             <p class="about">
                 <?php echo $about; ?>
             </p>
-            <p class="time">OBJAVLJENO:</p>
+            <p class="time">
+                <?php echo $date; ?>
+            </p>
         </section>
         <?php echo "<img src='../images/" . $picture . "'"; ?>
         <br>
@@ -71,6 +74,7 @@
             <?php echo $content; ?>
         </p>
     </main>
+
     <footer>
         Tihomir Popović - tpopovic@tvz.hr - 2023.
     </footer>

@@ -15,12 +15,13 @@
         <img src="../assets/logo.webp" alt="debate">
         <nav>
             <a href="index.php">HOME</a>
-            <a href="">MUNDO</a>
-            <a href="">DEPORTE</a>
-            <a href="">ADMINISTRACIJA</a>
+            <a href="kategorija.php?id=svijet">SVIJET</a>
+            <a href="kategorija.php?id=sport">SPORT</a>
+            <a href="administracija.php">ADMINISTRACIJA</a>
             <a href="unos.php">UNOS</a>
         </nav>
     </header>
+
     <form enctype="multipart/form-data" action="skripta.php" method="post">
         <label for="naslov">Naslov vijesti:</label><br>
         <input type="text" id="naslov" name="naslov" class="form-control" required><br>
@@ -30,8 +31,8 @@
         <textarea name="tekst" id="tekst" cols="40" rows="10" class="form-control" required></textarea><br>
         <label for="tekst">Kategorija:</label><br>
         <select id="kategorija" name="kategorija" class="form-control">
-            <option value="MUNDO" class="form-control">Mundo</option>
-            <option value="DEPORTE" class="form-control">Deporte</option>
+            <option value="SVIJET" class="form-control">Svijet</option>
+            <option value="SPORT" class="form-control">Sport</option>
         </select><br>
         <label for="slika">Slika:</label><br>
         <input type="file" name="slika" id="slika" accept="image/*" class="form-control" required /><br>
@@ -41,6 +42,7 @@
         <button type="reset" value="Poništi" class="btn btn-secondary">Poništi</button>
         <button type="submit" name="submit" value="Prihvati" class="btn btn-primary">Prihvati</button>
     </form>
+
     <footer>
         Tihomir Popović - tpopovic@tvz.hr - 2023.
     </footer>

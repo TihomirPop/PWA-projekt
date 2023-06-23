@@ -66,13 +66,19 @@ hr{
     object-fit: cover;
     border-radius: 6px;
 }
-.articleWrapper article .category {
+.articleWrapper article .about {
     color: #004AD5;
     font-weight: bold;
     font-size: 12px;
     margin: 10px 0;
 }
 .articleWrapper article h3 {
+    font-size: 17px;
+}
+.articleWrapper article h3 a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
     font-size: 17px;
 }
 .articleWrapper article .author {
