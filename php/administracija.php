@@ -62,12 +62,12 @@
             <br>
             <div class="form-item">
                 <div class="form-field">';
-        if ($row['prikazi'] == 1) {
-            echo '<input type="checkbox" name="prikazi" id="prikazi" checked/> <label> Prikaži na stranici</label>';
-        } else {
-            echo '<input type="checkbox" name="prikazi" id="prikazi"/> <label> Prikaži na stranici</label>';
-        }
-        echo '
+                    if ($row['prikazi'] == 1)
+                        echo '<input type="checkbox" name="prikazi" id="prikazi' . $row['id'] . '" checked/>';
+                    else
+                        echo '<input type="checkbox" name="prikazi" id="prikazi' . $row['id'] . '"/>';
+                    echo '
+                    <label for="prikazi' . $row['id'] . '"> Prikaži na stranici</label>
                 </div>
             </div>
             <br>
@@ -85,6 +85,8 @@
         $id = $_POST['id'];
         $query = "DELETE FROM vijesti WHERE id=$id ";
         $result = mysqli_query($dbc, $query);
+
+        echo "<meta http-equiv='refresh' content='0'>";
     } else if (isset($_POST['update'])) {
         $title = $_POST['title'];
         $about = $_POST['about'];
@@ -107,6 +109,8 @@
             $query = "UPDATE vijesti SET naslov='$title', sazetak='$about', tekst='$content', kategorija='$category', prikazi='$prikazi' WHERE id=$id ";
             $result = mysqli_query($dbc, $query);
         }
+
+        echo "<meta http-equiv='refresh' content='0'>";
     }
 
     ?>
