@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" type="image/x-icon" href="../assets/icon.ico">
     <title>debate</title>
 </head>
 
@@ -81,6 +82,8 @@
             }
         }
         else if($_SESSION['razina'] == 1){
+            echo '<p class="userMsg">Bok ' . $_SESSION['korisnickoIme'] . '!</p>';
+
             echo '
             <form action="" method="post">
                 <button type="submit" name="logout" class="btn btn-primary signInUpButton">Logout</button>
