@@ -37,38 +37,41 @@
                 echo "<meta http-equiv='refresh' content='0'>";
             } else {
                 echo '
-                <p>Krivo korisničko ime ili lozinka. <a href="registracija.php">Registriraj se</a></p>';
+                <br><br><p class="pError">Krivo korisničko ime ili lozinka. <a href="registracija.php">Registriraj se.</a></p>';
             }
         }
         
         if(!isset($_SESSION['razina'])){
             echo '
-            <form enctype="multipart/form-data" action="" method="POST">
+            <form enctype="multipart/form-data" action="" method="POST" class="signInUpForm">
                 <div class="form-item">
                     <span id="porukaUsername" class="bojaPoruke"></span>
                     <label for="username">Korisničko ime:</label>
                     <div class="form-field">
-                        <input type="text" name="username" id="username" class="formfield-textual" required>
+                        <input type="text" name="username" id="username" class="form-control" required>
                     </div>
-                </div>
+                </div><br>
                 <div class="form-item">
                     <span id="porukaPass" class="bojaPoruke"></span>
                     <label for="pass">Lozinka: </label>
                     <div class="form-field">
-                        <input type="password" name="pass" id="pass" class="formfield-textual" required>
+                        <input type="password" name="pass" id="pass" class="form-control" required>
                     </div>
-                </div>
-
+                </div><br>
+                <br>
                 <div class="form-item">
-                    <button type="submit" name="prijava" id="slanje">Prijavi se</button>
+                    <button type="submit" name="prijava" id="slanje" class="btn btn-primary signInUpButton">Prijavi se</button>
                 </div>
-            </form>';
+            </form>
+            <a href="registracija.php">
+                <button class="btn btn-primary signInUpButton">Registriraj se</button>
+            </a>';
         }
         else if($_SESSION['razina'] == 0){
-            echo '<p>Bok ' . $_SESSION['korisnickoIme'] . '! Uspješno ste prijavljeni, ali niste administrator.</p>';
+            echo '<p class="userMsg">Bok ' . $_SESSION['korisnickoIme'] . '! Uspješno ste prijavljeni, ali niste administrator.</p>';
             echo '
             <form action="" method="post">
-                <button type="submit" name="logout" class="btn btn-primary">Logout</button>
+                <button type="submit" name="logout" class="btn btn-primary signInUpButton">Logout</button>
             </form>';
 
             if(isset($_POST['logout'])){
@@ -80,7 +83,7 @@
         else if($_SESSION['razina'] == 1){
             echo '
             <form action="" method="post">
-                <button type="submit" name="logout" class="btn btn-primary">Logout</button>
+                <button type="submit" name="logout" class="btn btn-primary signInUpButton">Logout</button>
             </form>';
 
             if(isset($_POST['logout'])){

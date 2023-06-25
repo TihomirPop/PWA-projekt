@@ -57,52 +57,32 @@
     ?>
 
     <section role="main">
-        <form enctype="multipart/form-data" action="" method="POST">
-            <div class="form-item">
-                <span id="porukaIme" class="bojaPoruke"></span>
-                <label for="ime">Ime: </label>
-                <div class="form-field">
-                    <input type="text" name="ime" id="ime" class="form-fieldtextual" required>
-                </div>
-            </div>
-            <div class="form-item">
-                <span id="porukaPrezime" class="bojaPoruke"></span>
-                <label for="prezime">Prezime: </label>
-                <div class="form-field">
-                    <input type="text" name="prezime" id="prezime" class="formfield-textual" required>
-                </div>
-            </div>
-            <div class="form-item">
-                <span id="porukaUsername" class="bojaPoruke"></span>
-                <label for="username">Korisničko ime:</label>
-                <div class="form-field">
-                    <input type="text" name="username" id="username" class="formfield-textual" required>
-                </div>
-            </div>
-            <div class="form-item">
-                <span id="porukaPass" class="bojaPoruke"></span>
-                <label for="pass">Lozinka: </label>
-                <div class="form-field">
-                    <input type="password" name="pass" id="pass" class="formfield-textual" required>
-                </div>
-            </div>
-            <div class="form-item">
-                <span id="porukaPassRep" class="bojaPoruke"></span>
-                <label for="passRep">Ponovite lozinku: </label>
-                <div class="form-field">
-                    <input type="password" name="passRep" id="passRep" class="form-field-textual" required>
-                </div>
-            </div>
+        <form enctype="multipart/form-data" action="" method="POST" class="signInUpForm" id="form">
+            <?php echo isset($msg) ? "<p class='pError'>$msg<p>" : '' ?>
+            <label for="ime">Ime: </label>
+            <input type="text" name="ime" id="ime" class="form-control">
+            <span id="imeError" class="error"></span><br>
+            <label for="prezime">Prezime: </label>
+            <input type="text" name="prezime" id="prezime" class="form-control">
+            <span id="prezimeError" class="error"></span><br>
+            <label for="username">Korisničko ime:</label>
+            <input type="text" name="username" id="username" class="form-control">
+            <span id="usernameError" class="error"></span><br>
+            <label for="pass">Lozinka: </label>
+            <input type="password" name="pass" id="pass" class="form-control">
+            <span id="passError" class="error"></span><br>
+            <label for="passRep">Ponovite lozinku: </label>
+            <input type="password" name="passRep" id="passRep" class="form-control">
+            <span id="passRepError" class="error"></span><br><br>
 
-            <div class="form-item">
-                <button type="submit" name="submit" id="slanje">Registriraj se</button>
-            </div>
+            <button type="submit" name="submit" id="slanje" class="btn btn-primary signInUpButton">Registriraj se</button>
         </form>
     </section>
 
     <footer>
         Tihomir Popović - tpopovic@tvz.hr - 2023.
     </footer>
+    <script src="../js/registracija.js"></script>
 </body>
 
 </html>

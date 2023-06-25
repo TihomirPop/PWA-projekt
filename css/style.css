@@ -160,3 +160,22 @@ main .content{
     left: 0;
     right: 0;
 }
+
+.signInUpForm{
+    max-width: 300px;
+    margin: 60px auto;
+}
+.signInUpButton{
+    display: block;
+    margin: 0 auto;
+}
+
+.pError{
+    color: red;
+    text-align: center;
+}
+
+.userMsg{
+    text-align: center;
+    margin-top: 40px;
+}
